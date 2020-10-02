@@ -618,7 +618,12 @@ local function prepare_func_match(entry, kind)
   local entries = {}
 
   if entry.node then
-	  if kind == "function" or kind == "method" then
+	  if kind == "function" or 
+		  kind == "method" or 
+		  kind == "type" or 
+		  kind == "macro" or 
+		  kind == "namespace" 
+	  then
 		  entry["kind"] = kind
 		  table.insert(entries, entry)
 	  end
